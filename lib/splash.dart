@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterexam/home.dart';
+import 'package:flutterexam/dashboard.dart';
 
 class splash extends StatefulWidget {
   const splash({Key? key}) : super(key: key);
@@ -20,7 +20,7 @@ class _splashState extends State<splash> {
     await Future.delayed(Duration(milliseconds: 5000), () {});
     // the code to go to the next screen/page
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => Home()));
+        context, MaterialPageRoute(builder: (context) => Dashboard()));
   }
 
   @override
