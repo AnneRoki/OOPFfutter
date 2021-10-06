@@ -26,9 +26,6 @@ class _navigationState extends State<navigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('AIT Banking'),
-      ),
       body: Center(
         child: _options.elementAt(_pageIndex),
       ),
