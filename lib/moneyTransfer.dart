@@ -17,10 +17,16 @@ class MoneyTransfer extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return new MoneyTransferState();
+    TextField createtext() => TextField();
   }
 }
 
 class MoneyTransferState extends State<MoneyTransfer> {
+  final textholder = TextEditingController();
+  clearText() {
+    textholder.clear();
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -34,8 +40,9 @@ class MoneyTransferState extends State<MoneyTransfer> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               TextField(
+                controller: textholder,
                 decoration:
-                    new InputDecoration(labelText: 'Enter amount to transfer'),
+                    new InputDecoration(hintText: 'Enter amount to transfer'),
                 keyboardType: TextInputType.number,
                 inputFormatters: <TextInputFormatter>[
                   FilteringTextInputFormatter.digitsOnly
@@ -51,7 +58,7 @@ class MoneyTransferState extends State<MoneyTransfer> {
                     ),
                     child: Text('Proceed'),
                     onPressed: () {
-                      //////
+                      clearText();
                     },
                   )),
             ],
