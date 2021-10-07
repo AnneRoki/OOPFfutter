@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterexam/dashboard.dart';
+import 'package:flutterexam/moneyTransfer.dart';
 
 class navigation extends StatefulWidget {
   const navigation({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class _navigationState extends State<navigation> {
   //page navigation
   List<Widget> _options = <Widget>[
     Dashboard(),
-    Text('Temporarily blank'),
+    MoneyTransfer(),
   ];
   //navigtion tap function
   void _ontap(int index) {
