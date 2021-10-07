@@ -42,7 +42,7 @@ class MoneyTransferState extends State<MoneyTransfer> {
       appBar: AppBar(
         title: Text('Transfer Money'),
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.yellow[100],
       body: new Container(
           padding: const EdgeInsets.all(40.0),
           // ignore: unnecessary_new
