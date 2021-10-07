@@ -17,29 +17,53 @@ class Dashboard extends StatelessWidget {
               height: 80,
               width: 600,
               decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Colors.yellow,
                   borderRadius: BorderRadius.all(Radius.circular(10))),
               child: Padding(
                 padding: EdgeInsets.all(10),
                 child: Text(
-                  'Account Number:',
-                  style: TextStyle(fontSize: 14),
+                  'Account Number:   XXXXXX98',
+                  style: TextStyle(fontSize: 23, color: Colors.black), 
                 ),
               ),
             ),
             Padding(padding: EdgeInsets.all(5)),
             Container(
-              height: 120,
-              width: 600,
+              height: 150,
+              width: 700,
               decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Colors.yellow,
                   borderRadius: BorderRadius.all(Radius.circular(10))),
+              child: Padding(
+                padding: EdgeInsets.all(10),
+                child: Text(
+                  'Balance: \n 500,000',
+                  style: TextStyle(fontSize: 40, color: Colors.black), 
+                ),
+              ),  
             ),
-            ListView(
-              padding: const EdgeInsets.all(8),
-              children: <Widget>[
-                Container(),
-              ],
+            Padding(padding: EdgeInsets.all(5)),
+            Container(
+              height: 300, 
+              width: 700,
+              decoration: BoxDecoration(
+                  color: Colors.yellow,
+                  borderRadius: BorderRadius.all(Radius.circular(10))),
+              child: ListView(
+                padding: const EdgeInsets.all(8),
+                children: <Widget>[
+                  Container(
+                    height: 50, 
+                    width: 50,
+                    color: Colors.white,
+                  ), 
+                  Container(
+                    height: 50, 
+                    width: 50,
+                    color: Colors.white,
+                  ),
+                ],
+              ),
             ),
           ],
         ),
