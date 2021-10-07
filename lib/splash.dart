@@ -25,28 +25,23 @@ class _splashState extends State<splash> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(backgroundColor: Colors.white,
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              height: 100,
-              width: 100,
-              color: Colors.blue[400],
-            ),
-            Container(
-              child: Text(
-                'Splash Screen',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ],
+       child: Image(
+         image: AssetImage('assets/AIT.png'),
+          ),
         ),
+       );
+  }
+}
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData( 
+        primarySwatch: Colors.yellow,
       ),
+      home: const splash(),
     );
   }
 }
