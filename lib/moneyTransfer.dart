@@ -31,37 +31,34 @@ class MoneyTransferState extends State<MoneyTransfer> {
       body: new Container(
           padding: const EdgeInsets.all(40.0),
           child: new Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          TextField(
-              decoration: new InputDecoration(
-                labelText: 'Enter currency'
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              TextField(
+                decoration: new InputDecoration(labelText: 'Enter currency'),
               ),
-          ),
-           TextField(
-              decoration: new InputDecoration(
-                 labelText: 'Enter amount to transfer'
+              TextField(
+                decoration:
+                    new InputDecoration(labelText: 'Enter amount to transfer'),
+                keyboardType: TextInputType.number,
+                inputFormatters: <TextInputFormatter>[
+                  FilteringTextInputFormatter.digitsOnly
+                ],
               ),
-              keyboardType: TextInputType.number,
-              inputFormatters: <TextInputFormatter>[
-              FilteringTextInputFormatter.digitsOnly
-                  ], 
-          ),
-           Container(
-                height: 50,
-                padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.yellow,
-                    onPrimary: Colors.black,
-                  ),
-                  child: Text('Proceed'),
-                  onPressed: () {
-                        //////
-                      },
-              )),
-        ],
-      )),
+              Container(
+                  height: 50,
+                  padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.yellow,
+                      onPrimary: Colors.black,
+                    ),
+                    child: Text('Proceed'),
+                    onPressed: () {
+                      //////
+                    },
+                  )),
+            ],
+          )),
     );
   }
 }
