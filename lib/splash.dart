@@ -17,7 +17,7 @@ class _splashState extends State<splash> {
 //this is to move to the home screen
   navigatetohome() async {
     // the duration of the splash screen
-    await Future.delayed(Duration(milliseconds: 5000), () {});
+    await Future.delayed(Duration(milliseconds: 3000), () {});
     // the code to go to the next screen/page
     Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (context) => navigation()));
@@ -25,20 +25,22 @@ class _splashState extends State<splash> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: Colors.white,
+    return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
-       child: Image(
-         image: AssetImage('assets/AIT.png'),
-          ),
+        child: Image(
+          image: AssetImage('assets/AIT.png'),
         ),
-       );
+      ),
+    );
   }
 }
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData( 
+      theme: ThemeData(
         primarySwatch: Colors.yellow,
       ),
       home: const splash(),
