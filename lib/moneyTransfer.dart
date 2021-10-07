@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'ammar.dart';
 
 void main() => runApp(new MyApp());
 
@@ -22,11 +23,19 @@ class MoneyTransfer extends StatefulWidget {
 }
 
 class MoneyTransferState extends State<MoneyTransfer> {
-  final textholder = TextEditingController();
+  TextEditingController textholder = TextEditingController();
+
+  @override
+  void dispose() {
+    textholder.dispose();
+    super.dispose();
+  }
+
   clearText() {
     textholder.clear();
   }
 
+  int ttt = 0;
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -36,6 +45,7 @@ class MoneyTransferState extends State<MoneyTransfer> {
       backgroundColor: Colors.white,
       body: new Container(
           padding: const EdgeInsets.all(40.0),
+          // ignore: unnecessary_new
           child: new Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -58,11 +68,22 @@ class MoneyTransferState extends State<MoneyTransfer> {
                     ),
                     child: Text('Proceed'),
                     onPressed: () {
+                      _setvar();
                       clearText();
                     },
                   )),
+              Container(
+                child: Text(money != null ? '$money' : ""),
+              ),
             ],
           )),
     );
+  }
+
+  void _setvar() {
+    setState(() {
+      getvalue = int.parse(textholder.text);
+      money = money - getvalue;
+    });
   }
 }
