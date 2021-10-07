@@ -1,99 +1,42 @@
 import 'package:flutter/material.dart';
 
-class Dashboard extends StatelessWidget{
+class Dashboard extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
-      appBar: new AppBar(
-        title: Text('AIT Bank', 
-        style: new TextStyle(
-          color: Colors.black
-          )
+        appBar: new AppBar(
+          title: Text('AIT Bank', style: new TextStyle(color: Colors.black)),
+          backgroundColor: Colors.yellow,
+        ),
+        backgroundColor: Colors.yellow[100],
+        body: Padding(
+          padding: EdgeInsets.all(25),
+          child: Column(
+            children: [
+              Container(
+                height: 80,
+                width: 600,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                child: Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Text(
+                    'Account Number:',
+                    style: TextStyle(fontSize: 14),
+                  ),
+                ),
+              ),
+              Padding(padding: EdgeInsets.all(5)),
+              Container(
+                height: 120,
+                width: 600,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(10))),
+              )
+            ],
           ),
-        backgroundColor: Colors.yellow,
-      ),
-      backgroundColor: Colors.yellow[100],
-      body: Container(
-        padding: EdgeInsets.all(30.0),
-        child: GridView.count(
-          crossAxisCount: 2,
-
-          children: <Widget>[
-            Card(
-              margin: EdgeInsets.all(8.0),
-              child: InkWell(
-                onTap: () {}, 
-                splashColor: Colors.yellow,
-                child: Center(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget> [
-                      Icon(
-                        Icons.account_balance_wallet, 
-                        size: 70.0
-                        ),
-                      Text(
-                        "Savings account", 
-                        style : new TextStyle(
-                          fontSize: 17.0
-                          )
-                          )
-                    ],
-                  ),
-                  ),
-                  ),
-            ),
-             Card(
-              margin: EdgeInsets.all(8.0),
-              child: InkWell(
-                onTap: () {}, 
-                splashColor: Colors.yellow,
-                child: Center(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget> [
-                      Icon(
-                        Icons.send_to_mobile, 
-                        size: 70.0
-                        ),
-                      Text(
-                        "Transfer money", 
-                        style : new TextStyle(
-                          fontSize: 17.0
-                          )
-                          )
-                    ],
-                  ),
-                  ),
-                  ),
-            ), 
-            Card(
-              margin: EdgeInsets.all(8.0),
-              child: InkWell(
-                onTap: () {}, 
-                splashColor: Colors.yellow,
-                child: Center(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget> [
-                      Icon(
-                        Icons.add, 
-                        size: 70.0
-                        ),
-                      Text(
-                        "Add money", 
-                        style : new TextStyle(
-                          fontSize: 17.0
-                          )
-                          )
-                    ],
-                  ),
-                  ),
-                  ),
-            ),
-          ],
-          ),
-      )
-    );
+        ));
   }
 }
