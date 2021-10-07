@@ -34,9 +34,6 @@ class MoneyTransferState extends State<MoneyTransfer> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               TextField(
-                decoration: new InputDecoration(labelText: 'Enter currency'),
-              ),
-              TextField(
                 decoration:
                     new InputDecoration(labelText: 'Enter amount to transfer'),
                 keyboardType: TextInputType.number,
