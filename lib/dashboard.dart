@@ -23,7 +23,7 @@ class Dashboard extends StatelessWidget {
                 padding: EdgeInsets.all(10),
                 child: Text(
                   'Account Number:   XXXXXX98',
-                  style: TextStyle(fontSize: 23, color: Colors.black), 
+                  style: TextStyle(fontSize: 23, color: Colors.black),
                 ),
               ),
             ),
@@ -38,27 +38,28 @@ class Dashboard extends StatelessWidget {
                 padding: EdgeInsets.all(10),
                 child: Text(
                   'Balance: \n 500,000',
-                  style: TextStyle(fontSize: 40, color: Colors.black), 
+                  style: TextStyle(fontSize: 40, color: Colors.black),
                 ),
-              ),  
+              ),
             ),
-            Padding(padding: EdgeInsets.all(5)),
+            Padding(padding: EdgeInsets.all(6)),
             Container(
-              height: 300, 
+              height: 200,
               width: 700,
               decoration: BoxDecoration(
                   color: Colors.yellow,
                   borderRadius: BorderRadius.all(Radius.circular(10))),
               child: ListView(
-                padding: const EdgeInsets.all(8),
+                padding: const EdgeInsets.all(12),
                 children: <Widget>[
                   Container(
-                    height: 50, 
+                    height: 80,
                     width: 50,
                     color: Colors.white,
-                  ), 
+                  ),
+                  Padding(padding: EdgeInsets.all(8)),
                   Container(
-                    height: 50, 
+                    height: 80,
                     width: 50,
                     color: Colors.white,
                   ),
