@@ -28,12 +28,16 @@ class _splashState extends State<splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.yellow[100],
       body: Center(
-        child: Image(
-          image: AssetImage('assets/AIT.png'),
+        child: Text(
+          'AIT bank',
+          style: TextStyle(
+            fontSize: 80,
+            fontFamily: 'Rye',
+          ),
         ),
-      ),
+        ),
     );
   }
 }
