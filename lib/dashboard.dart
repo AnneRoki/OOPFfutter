@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterexam/ammar.dart';
 
 class Dashboard extends StatelessWidget {
   @override
@@ -37,7 +38,7 @@ class Dashboard extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.all(10),
                 child: Text(
-                  'Balance: \n 500,000',
+                  'Balance: \n $money',
                   style: TextStyle(fontSize: 40, color: Colors.black),
                 ),
               ),
