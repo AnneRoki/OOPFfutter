@@ -51,27 +51,36 @@ class _DashboardState extends State<Dashboard> {
               ),
             ),
             Padding(padding: EdgeInsets.all(6)),
+            Center(
+              child: Container(
+                  height: 25,
+                  width: 300,
+                  decoration: BoxDecoration(
+                      color: Colors.yellow,
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 50,
+                    ),
+                    child: Text(
+                      'Recent Transactions',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                  )),
+            ),
+            Padding(padding: EdgeInsets.all(6)),
             Container(
               height: 200,
               width: 700,
               decoration: BoxDecoration(
                   color: Colors.yellow,
                   borderRadius: BorderRadius.all(Radius.circular(10))),
-              child: ListView(
-                padding: const EdgeInsets.all(12),
-                children: <Widget>[
-                  Container(
-                    height: 80,
-                    width: 50,
-                    color: Colors.white,
-                  ),
-                  Padding(padding: EdgeInsets.all(8)),
-                  Container(
-                    height: 80,
-                    width: 50,
-                    color: Colors.white,
-                  ),
-                ],
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                    'Account number:\n$acnum\nAmmount transfered: \n$getvalue',
+                    style: TextStyle(fontSize: 30)),
               ),
             ),
           ],
