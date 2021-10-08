@@ -33,11 +33,11 @@ class _splashState extends State<splash> {
         child: Text(
           'AIT bank',
           style: TextStyle(
-            fontSize: 80,
+            fontSize: 50,
             fontFamily: 'Rye',
           ),
         ),
-        ),
+      ),
     );
   }
 }
