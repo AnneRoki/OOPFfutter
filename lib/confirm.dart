@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutterexam/ammar.dart';
+import 'package:flutterexam/nav.dart';
 
 class confirm extends StatefulWidget {
   @override
@@ -31,14 +33,14 @@ class _State extends State<confirm> {
                           children: [
                             Container(
                                 child: Text(
-                              "Transfer Amount",
+                              "Transfer Amount:",
                               textAlign: TextAlign.left,
                               style:
                                   TextStyle(color: Colors.black, fontSize: 15),
                             )),
                             Container(
                                 child: Text(
-                              "Amount",
+                              "$money",
                               textAlign: TextAlign.left,
                               style:
                                   TextStyle(color: Colors.black, fontSize: 15),
@@ -50,14 +52,14 @@ class _State extends State<confirm> {
                           children: [
                             Container(
                                 child: Text(
-                              "Account Number",
+                              "Account Number:",
                               textAlign: TextAlign.left,
                               style:
                                   TextStyle(color: Colors.black, fontSize: 15),
                             )),
                             Container(
                                 child: Text(
-                              "#Number",
+                              "$acnum",
                               textAlign: TextAlign.left,
                               style:
                                   TextStyle(color: Colors.black, fontSize: 15),
@@ -70,7 +72,12 @@ class _State extends State<confirm> {
                                 "Confirm",
                                 style: TextStyle(fontSize: 20),
                               ),
-                              onPressed: () {})),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => navigation()));
+                              })),
                     ])))
           ])),
     );
