@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutterexam/confirm.dart';
 
 import 'ammar.dart';
 
@@ -81,7 +82,7 @@ class MoneyTransferState extends State<MoneyTransfer> {
                                       controller: textholder,
                                       style: TextStyle(height: 0.8),
                                       decoration: InputDecoration(
-                                          hintText: 'ammount',
+                                          hintText: 'amount',
                                           enabledBorder: OutlineInputBorder(
                                               borderRadius:
                                                   BorderRadius.circular(20))),
@@ -104,7 +105,7 @@ class MoneyTransferState extends State<MoneyTransfer> {
                                       controller: accountnum,
                                       style: TextStyle(height: 0.8),
                                       decoration: InputDecoration(
-                                          hintText: 'ammount',
+                                          hintText: 'Account number',
                                           enabledBorder: OutlineInputBorder(
                                               borderRadius:
                                                   BorderRadius.circular(20))),
@@ -133,6 +134,11 @@ class MoneyTransferState extends State<MoneyTransfer> {
                                         );
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(snackBar);
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    confirm()));
                                       } else if (int.parse(textholder.text) >
                                               money &&
                                           accountnum.text == '') {
