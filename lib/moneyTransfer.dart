@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutterexam/snackbar.dart';
+
 import 'ammar.dart';
 
 void main() => runApp(new MyApp());
@@ -124,7 +124,8 @@ class MoneyTransferState extends State<MoneyTransfer> {
                                     child: Text('Proceed'),
                                     //clearing and saving the values into a variable
                                     onPressed: () {
-                                      if (int.parse(textholder.text) < money) {
+                                      if (int.parse(textholder.text) < money &&
+                                          accountnum.text != '') {
                                         _setvar();
                                         clearText();
                                         final snackBar = SnackBar(
@@ -133,7 +134,31 @@ class MoneyTransferState extends State<MoneyTransfer> {
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(snackBar);
                                       } else if (int.parse(textholder.text) >
-                                          money) {}
+                                              money &&
+                                          accountnum.text == '') {
+                                        final snackBar = SnackBar(
+                                          content: const Text(
+                                              'Please fill in all the blanks'),
+                                        );
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(snackBar);
+                                      } else if (int.parse(textholder.text) ==
+                                              0 &&
+                                          accountnum.text == '') {
+                                        final snackBar = SnackBar(
+                                          content: const Text(
+                                              'Please fill in all the blanks'),
+                                        );
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(snackBar);
+                                      } else {
+                                        final snackBar = SnackBar(
+                                          content: const Text(
+                                              'Please fill in all the blanks'),
+                                        );
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(snackBar);
+                                      }
                                     },
                                   ),
                                 ],
