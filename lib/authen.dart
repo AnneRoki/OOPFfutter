@@ -18,14 +18,17 @@ class _AuthenState extends State<Authen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.yellow[100],
         body: Center(
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             Container(
-                height: 500,
-                width: 500,
+                height: 200,
+                width: 200,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(100)),
+                ),
                 child: Image(
-                  image: AssetImage('with/AIT.png'),
+                  image: AssetImage('assets/AIT.png'),
                 )),
             Container(
               child: ElevatedButton(
