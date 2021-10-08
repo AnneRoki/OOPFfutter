@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutterexam/nav.dart';
 
+import 'authen.dart';
+
 class splash extends StatefulWidget {
   const splash({Key? key}) : super(key: key);
   @override
@@ -20,7 +22,7 @@ class _splashState extends State<splash> {
     await Future.delayed(Duration(milliseconds: 3000), () {});
     // the code to go to the next screen/page
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => navigation()));
+        context, MaterialPageRoute(builder: (context) => Authen()));
   }
 
   @override
