@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterexam/nav.dart';
 
 class loginScreen extends StatefulWidget {
   @override
@@ -53,8 +54,20 @@ class _State extends State<loginScreen> {
                       color: Colors.red,
                       child: Text('Login'),
                       onPressed: () {
-                        print(nameController.text);
-                        print(passwordController.text);
+                        if (nameController.text == 'admin' &&
+                            passwordController.text == 'admin') {
+                          // print(nameController.text);
+                          // print(passwordController.text);
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => navigation()));
+                        } else {
+                          final snackBar = SnackBar(
+                            content: const Text('Incorrect Credentials'),
+                          );
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                        }
                       },
                     )),
                 Container(
