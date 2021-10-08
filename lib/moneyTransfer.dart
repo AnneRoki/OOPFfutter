@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutterexam/snackbar.dart';
 import 'ammar.dart';
 
 void main() => runApp(new MyApp());
@@ -24,11 +25,6 @@ class MoneyTransfer extends StatefulWidget {
 class MoneyTransferState extends State<MoneyTransfer> {
   TextEditingController textholder = TextEditingController();
   TextEditingController accountnum = TextEditingController();
-  // @override
-  // void dispose() {
-  //   textholder.dispose();
-  //   super.dispose();
-  // }
 
   clearText() {
     textholder.clear();
@@ -77,6 +73,7 @@ class MoneyTransferState extends State<MoneyTransfer> {
                                 children: [
                                   Text('Enter an ammount to transfer'),
                                   Padding(padding: EdgeInsets.all(6)),
+                                  //textfield for amount to be sent
                                   Container(
                                     height: 30,
                                     width: 400,
@@ -99,6 +96,7 @@ class MoneyTransferState extends State<MoneyTransfer> {
                                     'Receivers Account number',
                                   ),
                                   Padding(padding: EdgeInsets.all(6)),
+                                  //textfield for account num
                                   Container(
                                     height: 30,
                                     width: 400,
@@ -115,6 +113,7 @@ class MoneyTransferState extends State<MoneyTransfer> {
                                         FilteringTextInputFormatter.digitsOnly,
                                       ],
                                     ),
+                                    //button
                                   ),
                                   Padding(padding: EdgeInsets.all(4)),
                                   ElevatedButton(
@@ -123,12 +122,20 @@ class MoneyTransferState extends State<MoneyTransfer> {
                                       onPrimary: Colors.black,
                                     ),
                                     child: Text('Proceed'),
+                                    //clearing and saving the values into a variable
                                     onPressed: () {
-                                      _setvar();
-                                      clearText();
+                                      if (int.parse(textholder.text) < money) {
+                                        _setvar();
+                                        clearText();
+                                        final snackBar = SnackBar(
+                                          content: const Text('Process done'),
+                                        );
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(snackBar);
+                                      } else if (int.parse(textholder.text) >
+                                          money) {}
                                     },
                                   ),
-                                  Text(money != null ? '$money' : ""),
                                 ],
                               ),
                             ),
@@ -144,10 +151,13 @@ class MoneyTransferState extends State<MoneyTransfer> {
         ));
   }
 
+//method to sav the value from the textfield
   void _setvar() {
     setState(() {
       getvalue = int.parse(textholder.text);
       money = money - getvalue;
+      getacnum = int.parse(accountnum.text);
+      acnum = getacnum;
     });
   }
 }
